@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from "react";
+import HomeIcon from '@mui/icons-material/Home';
 export default function English() {
 
 
@@ -73,11 +74,11 @@ export default function English() {
   };
 
   /* Resets the game back to default */
-  const restartGame = () => {
+  useEffect(() => {
     setScore(0);
     setCurrentQuestion(0);
     setShowResults(false);
-  };
+  }, [])
   return (
     <div>
       <div className="App">
@@ -96,7 +97,7 @@ export default function English() {
               {score} out of {questions.length} correct - (
               {(score / questions.length) * 100}%)
             </h2>
-            <button onClick={() => restartGame()}>Restart</button>
+            <a href="/"><HomeIcon /></a>
           </div>
         ) : (
           /* 5.else show Question Card  */
