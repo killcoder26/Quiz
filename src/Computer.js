@@ -83,7 +83,7 @@ export default function Computer() {
     <div>
       <div className="App">
         {/* 1. Header  */}
-        <h1>USA Quiz 🇺🇸</h1>
+        <h1>Computer Quiz</h1>
 
         {/* 2. Current Score  */}
         <h2>Score: {score}</h2>
