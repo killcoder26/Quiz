@@ -2,14 +2,12 @@ import express from "express"
 import cors from "cors"
 import mongoose from "mongoose"
 
-
-
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded())
 app.use(cors())
 
-mongoose.connect("mongodb://localhost:27017/quizapp", {
+mongoose.connect("mongodb://127.0.0.1:27017/quizapp", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, () => {
@@ -31,17 +29,18 @@ const User = new mongoose.model("users", userSchema)
 
 //routes
 app.get("/", (req, res) => {
-    User.find((err, data) => {
+    User.find({}, (err, doc) => {
         if (!err) {
-            console.log(data)
-            res.send(data);
+            console.log(doc)
+            res.send(doc);
         }
         else { console.log(err) }
     })
 
-
-
 })
+
+
+
 app.post("/register", (req, res) => {
     const { i, n, p, em } = req.body
     User.findOne({ email: em }, (err, user) => {
@@ -106,7 +105,7 @@ app.post("/login", (req, res) => {
     const { em, pass } = req.body
     User.findOne({ email: em }, (err, user) => {
         if (user) {
-            if (pass === user.pass) {
+            if (pass === user.password) {
                 res.send({ message: "Login Successfull", user: user })
             } else {
                 res.send({ message: "Password didn't match" })

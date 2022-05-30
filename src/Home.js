@@ -1,8 +1,14 @@
 import React from 'react'
-
+import axios from 'axios'
 import Button from '@mui/material/Button';
 
 function Home() {
+    axios.get('/')
+        .then((res) => {
+            console.log(res.data)
+            console.log("DB data Fetch")
+        })
+        .catch((err) => console.log(err));
 
     return (
         <center><div id="container">

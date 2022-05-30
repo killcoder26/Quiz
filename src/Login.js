@@ -26,13 +26,13 @@ export default function Login() {
                 console.log(response.data);
 
                 if (response.data.user) {
-                    if (response.data.user.email === email && response.data.user.pass === pass) {
+                    if (response.data.user.email === email && response.data.user.password === pass) {
 
                         home();
                     }
                 }
                 else {
-                    alert("wrong credentials. Check or Register");
+                    alert("Wrong Credentials.Check or Register");
 
                 }
             })
