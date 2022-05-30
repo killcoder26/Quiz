@@ -4,7 +4,9 @@ import Maths from './Maths'
 import Computer from './Computer'
 import Science from './Science'
 import English from "./English";
-import Home from "./Home"
+import Home from "./Home";
+import Login from "./Login";
+import Register from "./Register";
 
 function App() {
 
@@ -18,6 +20,8 @@ function App() {
           <Route path='/english' element={<English />} />
           <Route path='/science' element={<Science />} />
           <Route path='/computer' element={<Computer />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
         </Routes>
       </BrowserRouter>
     </div>

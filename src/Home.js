@@ -1,19 +1,19 @@
-import React, { useState } from 'react'
-import TextField from '@mui/material/TextField';
+import React from 'react'
+
 import Button from '@mui/material/Button';
 
 function Home() {
-    const [name, setname] = useState("text");
-    const [id, setid] = useState();
+
     return (
-        <center><div>
-            <h2>Welcome Student</h2><br />
-            <TextField label="Enter Name" onChange={(e) => setname(e.target.value)} /><br /><br />
-            <TextField label="Enter ID" onChange={(e) => setid(e.target.value)} /><br /><br />
-            <Button variant='contained' sx={{ backgroundColor: "red" }} >English</Button><br /><br />
-            <Button variant='contained' sx={{ backgroundColor: "red" }} >Science</Button><br /><br />
-            <Button variant='contained' sx={{ backgroundColor: "red" }} >Computer</Button><br /><br />
-            <Button variant='contained' sx={{ backgroundColor: "red" }} >Math</Button><br /><br />
+        <center><div id="container">
+            <div className="home"><br />
+                <h2>Welcome Student</h2><br />
+
+                <a href="/english"> <Button variant='contained' size="large" sx={{ backgroundColor: "red", fontSize: "54" }} >English</Button></a><br /><br />
+                <a href="/science"> <Button variant='contained' size="large" sx={{ backgroundColor: "red", fontSize: "54" }} >Science</Button></a><br /><br />
+                <a href="/computer"><Button variant='contained' size="large" sx={{ backgroundColor: "red", fontSize: "54" }} >Computer</Button></a><br /><br />
+                <a href="/math"><Button variant='contained' size="large" sx={{ backgroundColor: "red", fontSize: "54" }} >Math</Button></a><br /><br />
+            </div>
         </div></center >
     )
 }
