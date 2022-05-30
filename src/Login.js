@@ -17,7 +17,7 @@ export default function Login() {
     }
 
     const home = () => {
-        nav('/');
+        nav('/home');
     }
 
     const loginhandler = () => {
