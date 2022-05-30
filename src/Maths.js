@@ -1,88 +1,98 @@
+
+
+
+
+
+
+
+
+
+
 import React from 'react'
 import { useState } from "react";
-export default function Maths() {
-
-
+function Maths() {
 
     const [showResults, setShowResults] = useState(false);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
   
+
     const questions = [
-      {
-        text: "Does ______ know that _____ was absent?",
-        options: [
-          { id: 0, text:"she,me" , isCorrect: false },
-          { id: 1, text:"she,I" , isCorrect: true },
-          { id: 2, text:"her,me" , isCorrect: false },
-          { id: 3, text:"her,I" , isCorrect: false },
-        ]
-      },
-      {
-        text: "Please tell_____ _____have obtained a degree in Chemistry.",
-        options: [
-          { id: 0, text:"him,I" , isCorrect: true },
-          { id: 1, text: "he,I", isCorrect: false },
-          { id: 2, text: "he,me", isCorrect: false },
-          { id: 3, text: "him,me", isCorrect: false },
-        ],
-      },      {
-        text: "I remember that____ bought the fruits from ___",
-        options: [
-          { id: 0, text:"they,us", isCorrect: true },
-          { id: 1, text:"them,we", isCorrect: false },
-          { id: 2, text: "them,us", isCorrect: false },
-          { id: 3, text:"they,we", isCorrect: false },
-        ],
-      },
-      {
-        text: "When the dog chased Jayant,____ ran as fast as ____ could.",
-        options: [
-          { id: 0, text:"he,he" , isCorrect: true },
-          { id: 1, text:"him,he", isCorrect: false },
-          { id: 2, text:"him,him", isCorrect: false },
-          { id: 3, text: "he,him", isCorrect: false },
-        ],
-      },
-      {
-        text: "My uncle works in a factory. ____ says ____ is a noisy place.",
-        options: [
-          { id: 0, text: "he,its", isCorrect: false },
-          { id: 1, text:"he,it", isCorrect: true },
-          { id: 2, text: "it,its", isCorrect: false },
-          { id: 3, text:"it,it", isCorrect: false },
-        ],
-      },
-    ];
-  
-    // Helper Functions
-  
-    /* A possible answer was clicked */
-    const optionClicked = (isCorrect) => {
-      // Increment the score
-      if (isCorrect) {
-        setScore(score + 1);
-      }
-  
-      if (currentQuestion + 1 < questions.length) {
-        setCurrentQuestion(currentQuestion + 1);
-      } else {
-        //question length completed
-        setShowResults(true);
-      }
-    };
-  
-    /* Resets the game back to default */
-    const restartGame = () => {
-      setScore(0);
-      setCurrentQuestion(0);
-      setShowResults(false);
-    };
+        {
+          text: "14 persons can complete a work in 16 days, 8 persons started the work 12 days after they started the work, 8 more peoples joined them. How many days will they take to complete the remaining work?",
+          options: [
+            { id: 0, text: 12, isCorrect: false },
+            { id: 1, text: 5, isCorrect: false },
+            { id: 2, text: 9, isCorrect: false },
+            { id: 3, text: 8, isCorrect: true },
+          ]
+        },
+        {
+          text: "The ratio between the present age of Sudhir and Madan is 4:5 , if after five years the ratio of their age becomes 5 : 6, what is the present age of Sudhir?",
+          options: [
+            { id: 0, text: 20, isCorrect: true },
+            { id: 1, text: 18, isCorrect: false },
+            { id: 2, text: 22, isCorrect: false },
+            { id: 3, text: 21, isCorrect: false },
+          ],
+        },      {
+          text: "The sum of three consecutive odd numbers is 20 more than the first number of these. What is the middle number?",
+          options: [
+            { id: 0, text: 9, isCorrect: true },
+            { id: 1, text: 7, isCorrect: false },
+            { id: 2, text: 12, isCorrect: false },
+            { id: 3, text: 8, isCorrect: false },
+          ],
+        },
+        {
+          text: "Find the compound interest of Rs. 10,000 in 9 months at 4% per annum interest payable quarterly.",
+          options: [
+            { id: 0, text:300 , isCorrect: false },
+            { id: 1, text:303.01, isCorrect: true },
+            { id: 2, text:301, isCorrect: false },
+            { id: 3, text: 303.79, isCorrect: false },
+          ],
+        },
+        {
+          text: "If one-third of a number is 10 more than one fourth of the same number, what is 60% of that number?",
+          options: [
+            { id: 0, text: 144, isCorrect: false },
+            { id: 1, text:72, isCorrect: true },
+            { id: 2, text: 18, isCorrect: false },
+            { id: 3, text:24, isCorrect: false },
+          ],
+        },
+      ];
+    
+      // Helper Functions
+    
+      /* A possible answer was clicked */
+      const optionClicked = (isCorrect) => {
+        // Increment the score
+        if (isCorrect) {
+          setScore(score + 1);
+        }
+    
+        if (currentQuestion + 1 < questions.length) {
+          setCurrentQuestion(currentQuestion + 1);
+        } else {
+          //question length completed
+          setShowResults(true);
+        }
+      };
+    
+      /* Resets the game back to default */
+      const restartGame = () => {
+        setScore(0);
+        setCurrentQuestion(0);
+        setShowResults(false);
+      };
   return (
     <div>
+
 <div className="App">
       {/* 1. Header  */}
-      <h1>Maths Quiz</h1>
+      <h1>USA Quiz 🇺🇸</h1>
 
       {/* 2. Current Score  */}
       <h2>Score: {score}</h2>
@@ -96,7 +106,7 @@ export default function Maths() {
             {score} out of {questions.length} correct - (
             {(score / questions.length) * 100}%)
           </h2>
-          <button onClick={() => restartGame()}>Restart</button>
+          <button onClick={() => restartGame()}>Restart game</button>
         </div>
       ) : (
         /* 5.else show Question Card  */
@@ -123,7 +133,8 @@ export default function Maths() {
         </div>
       )}
     </div>
-
     </div>
   )
 }
+
+export default Maths
