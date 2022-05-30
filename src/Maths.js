@@ -92,7 +92,7 @@ function Maths() {
 
 <div className="App">
       {/* 1. Header  */}
-      <h1>USA Quiz 🇺🇸</h1>
+      <h1>Maths Quiz</h1>
 
       {/* 2. Current Score  */}
       <h2>Score: {score}</h2>
