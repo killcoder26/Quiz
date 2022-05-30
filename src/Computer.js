@@ -97,7 +97,7 @@ export default function Computer() {
               {score} out of {questions.length} correct - (
               {(score / questions.length) * 100}%)
             </h2>
-            <button onClick={() => restartGame()}>Restart game</button>
+           
           </div>
         ) : (
           /* 5.else show Question Card  */
